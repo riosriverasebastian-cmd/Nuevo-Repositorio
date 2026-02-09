@@ -53,3 +53,34 @@ Si prefieres no usar GitHub y solo "subir" los archivos directamente:
 ## ⚠️ Nota Sobre tus Datos
 Al abrir la versión web (la URL de Vercel), verás que **tus tareas y progreso aparecerán vacíos**.
 Esto es normal. Los datos se guardan en el navegador. La versión web es un "sitio nuevo" para tu navegador, por lo que empieza desde cero.
+
+---
+
+## 🔄 Cómo actualizar cambios
+Cada vez que hagas un cambio (ej: cambiar una fecha, añadir una tarea), debes "enviarlo" a GitHub para que Vercel se actualice solo.
+
+Ejecuta estos 3 comandos en tu terminal (en la carpeta del proyecto):
+
+1.  **Agrega los cambios:**
+    ```bash
+    git add .
+    ```
+2.  **Guárdalos con un mensaje:**
+    ```bash
+    git commit -m "Actualización: cambié fechas"
+    ```
+    *(Puedes cambiar el mensaje entre comillas por lo que tú quieras)*
+3.  **Súbelos:**
+    ```bash
+    git push
+    ```
+
+¡Y listo! Vercel detectará el cambio y actualizará tu web en 1-2 minutos.
+
+
+## 🔐 Notas sobre Firebase
+Tu configuración de Firebase (API Keys) es visible en el código fuente (`index.html`). Esto es normal para aplicaciones web simples sin backend propio.
+Para mantenerlo seguro:
+1. En **Firebase Console**, ve a **Project Settings**.
+2. Restringe tu API Key para que solo funcione desde tu dominio de Vercel (ej: `plan-maestro-2026.vercel.app`).
+3. Revisa las "Security Rules" de la base de datos para asegurarte de que solo se permite lo necesario.
